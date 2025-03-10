@@ -1,0 +1,86 @@
+:root {
+    --main-color: #ff7058;
+    --bg-color: #b5ded7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 160px;
+    object-fit: cover;
+}
+
+.title {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+.controls-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls-wrappers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-control {
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.swap-btn {
+    width: 100px;
+    height: 30px;
+}
+.input-control {
+    width: 100%;
+    font-size: 16px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    outline: none;
+}
+
+.input-control:focus-visible {
+    box-shadow: 0 0 7px 3px rgba(255, 133, 88, 0.8);;
+}
