@@ -19,7 +19,7 @@ let rates = {};
 
 // select event
 firstSelect.addEventListener("change", () => updateExchangeRates());
-secondSelect.addEventListener("change", () => renderInfo());
+secondSelect.addEventListener("change", () => renderInfo(rates));
 
 // input events
 firstInput.addEventListener("input", () => {
@@ -55,9 +55,9 @@ const updateExchangeRates = async () => {
 const renderInfo = () => {
     comparisonInfo.textContent = `1 ${firstSelect.value} = ${rates[secondSelect.value]} ${secondSelect.value}`
 
-    firstInput.value = rates[firstInput.value];
-    secondInput.value = rates[secondInput.value];
-}
+    firstInput.value = rates[firstSelect.value];
+    secondInput.value = rates[secondSelect.value];
+};
 
 // populate selects
 const populateSelects = () => {
@@ -72,12 +72,13 @@ const populateSelects = () => {
             <option value="${currency}" ${currency === SECOND_DEFAULT_CURRENCY ? "selected" : "" }>${currency}</option>
     `
     }
-}
+};
 
 // getInitialRates
 const getInitialRates = async () => {
     try {
         const response = await fetch(`${BASE_URL}/${FIRST_DEFAULT_CURRENCY}`);
+
         const data = await response.json();
 
         rates = data.rates;
